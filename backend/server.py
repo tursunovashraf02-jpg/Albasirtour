@@ -51,7 +51,11 @@ DEMO_USER_EMAIL = os.environ.get("DEMO_USER_EMAIL", "user@albasir.com")
 DEMO_USER_PHONE = os.environ.get("DEMO_USER_PHONE", "+998900000002")
 DEMO_USER_PASSWORD = os.environ.get("DEMO_USER_PASSWORD", "User@2026")
 
-client = AsyncIOMotorClient(MONGO_URL)
+client = AsyncIOMotorClient(
+    MONGO_URL,
+    serverSelectionTimeoutMS=10000,
+    connectTimeoutMS=10000,
+)
 db = client[DB_NAME]
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(name)s %(message)s")
@@ -914,7 +918,11 @@ async def on_startup():
         logger.info("MongoDB connected — database: %s", DB_NAME)
     except Exception as e:
         logger.error("MongoDB connection failed: %s", e)
-        raise RuntimeError(f"MongoDB ulanmadi. MONGO_URL va Atlas IP whitelist ni tekshiring: {e}") from e
+        raise RuntimeError(
+            "MongoDB ulanmadi. Atlas → Network Access da 0.0.0.0/0 qo'shing "
+            "(yoki Render outbound IP larni whitelist qiling). "
+            f"Xato: {e}"
+        ) from e
 
     # Drop old email unique index (may exist from earlier version)
     try:
