@@ -1,0 +1,135 @@
+{
+  "project": "AL BASIR TOUR - Premium Multilingual Tourism Website",
+  "theme": "hybrid_fullstack",
+  "design_archetype": "ARCHETYPE 5: LUXURY (Premium, Depth, Mystery) blended with High-Contrast Swiss",
+  "colors": {
+    "light_mode": {
+      "background": "#FCFDFD",
+      "surface": "#F3F4F6",
+      "primary": "#0B192C",
+      "primary_hover": "#162842",
+      "accent_gold": "#D4AF37",
+      "accent_gold_hover": "#C5A059",
+      "text_main": "#0B192C",
+      "text_muted": "#4B5563",
+      "border": "#E5E7EB"
+    },
+    "dark_mode": {
+      "background": "#050B14",
+      "surface": "#0F1B2A",
+      "primary": "#F3F4F6",
+      "primary_hover": "#FFFFFF",
+      "accent_gold": "#D4AF37",
+      "accent_gold_hover": "#E5C253",
+      "text_main": "#F9FAFB",
+      "text_muted": "#9CA3AF",
+      "border": "#1E293B"
+    },
+    "status": {
+      "pending": "#F59E0B",
+      "confirmed": "#10B981",
+      "cancelled": "#EF4444",
+      "completed": "#3B82F6"
+    }
+  },
+  "typography": {
+    "heading_font": "Playfair Display",
+    "body_font": "Manrope",
+    "rules": {
+      "h1": "text-5xl sm:text-6xl tracking-tighter leading-none",
+      "h2": "text-3xl sm:text-4xl tracking-tight leading-tight",
+      "h3": "text-xl sm:text-2xl tracking-tight",
+      "body": "text-base leading-relaxed",
+      "labels": "text-xs tracking-[0.2em] uppercase",
+      "anti_patterns": "DO NOT use Inter, Roboto, or Open Sans. Do not default to bold for all headings; use font-light or font-black to create tension."
+    }
+  },
+  "visual_enhancers": {
+    "surfaces": {
+      "header": "Crystal Glassmorphism: backdrop-blur-xl bg-white/70 (light) or bg-[#050B14]/70 (dark) with 1px delicate inner stroke (border-white/20 or border-white/10). DO NOT use purely transparent header.",
+      "cards_marketing": "Minimalist borders (1px border-border/40), no heavy shadows. Flat solid backgrounds.",
+      "cards_dashboard": "Flat solid background, 1px subtle border, sharp or slight 4px radius (avoid overly rounded buttons)."
+    },
+    "textures": "Subtle film grain on dark mode backgrounds to emulate high-end editorial magazines.",
+    "icons": "Use @phosphor-icons/react (Duotone weight) for marketing pages to give a high-end feel. Use lucide-react for standard dashboard actions."
+  },
+  "layouts": {
+    "spacing": "Generous. Use p-8, py-20, p-12, gap-12 to ensure content breathes.",
+    "marketing_grid": "Bento 'Tetris' Grid (grid-cols-1 md:grid-cols-12) with high asymmetry. Large hero images spanning multiple columns.",
+    "dashboard_grid": "High density grid with sharp 1px borders, collapsible sidebar for the admin panel, modular widgets."
+  },
+  "motion": {
+    "general": "Smooth, deliberate. Use Framer Motion for scroll reveals, staggered list entry, and page transitions.",
+    "hero_slider": "Auto-rotating Framer Motion slider with parallax image effects, text fading in smoothly from bottom.",
+    "hover_states": "Buttons lift slightly (-translate-y-1) and gain subtle drop-shadow. Images scale up smoothly (scale-105) within hidden overflow containers.",
+    "interactions": "Micro-animations on checkboxes, form inputs, and tab switches."
+  },
+  "accessibility": {
+    "contrast": "Ensure gold text on white background meets 4.5:1 (might need darkening), or use gold strictly for thick accents/borders. Always check APCA contrast.",
+    "focus": "focus-visible:ring-2 focus-visible:ring-accent_gold focus-visible:ring-offset-2",
+    "reduced_motion": "Respect prefers-reduced-motion using Framer Motion's useReducedMotion hook.",
+    "testing": "All interactive elements MUST have data-testid attributes (e.g., data-testid='booking-submit-button')."
+  },
+  "image_urls": {
+    "hero_destinations": [
+      {
+        "category": "Turkey",
+        "url": "https://images.pexels.com/photos/14524976/pexels-photo-14524976.jpeg",
+        "description": "Cappadocia balloons"
+      },
+      {
+        "category": "Dubai",
+        "url": "https://images.pexels.com/photos/19612315/pexels-photo-19612315.jpeg",
+        "description": "Dubai skyline luxury yachts"
+      },
+      {
+        "category": "Saudi Arabia",
+        "url": "https://images.unsplash.com/photo-1513072064285-240f87fa81e8",
+        "description": "Mecca Kaaba"
+      },
+      {
+        "category": "Indonesia",
+        "url": "https://images.pexels.com/photos/35043038/pexels-photo-35043038.jpeg",
+        "description": "Bali luxury resort pool"
+      }
+    ]
+  },
+  "component_guidelines": {
+    "header": "Sticky nav, multilingual dropdown (UZ/EN/RU), Dark/Light toggle, Book Now CTA. Crystal glass surface.",
+    "hero_slider": "Full height (80vh min). Large display typography layered over darkened image overlays (bg-black/30). 8 auto-rotating destinations.",
+    "tour_catalog": "Cardless layout or 1px border. Image, price, discount badge (Sale). Strikethrough old price. 'View Itinerary' button.",
+    "countries_page": "Editorial list. Massive country imagery, typography overlapping images. Parallax scrolling.",
+    "booking_form": "Multi-step wizard (Shadcn forms), custom inputs, file upload dropzone for payment receipt.",
+    "client_cabinet": "Left sidebar (orders, messages, favorites). Top nav with user profile. Central grid for current bookings.",
+    "admin_dashboard": "Dense data table (Shadcn Table), charts for statistics (Recharts or Shadcn Charts). Quick actions for CRUD operations.",
+    "chat_widget": "Floating bottom-right button opening a clean, fast chat interface. Differentiate Admin vs Client messages with color blocks."
+  },
+  "3d_libraries": {
+    "recommendation": "React Spring Parallax for 2.5D storytelling on the Countries showcase page. Do not over-use 3D; rely on high-quality 2D photography to sell the travel experience."
+  },
+  "UNIVERSAL_GUIDELINES_FOR_MAIN_AGENT": [
+    "You tend to converge toward generic, 'on distribution' outputs. In frontend design, this creates what users call the 'AI slop' aesthetic. Avoid this: make creative, distinctive frontends that surprise and delight.",
+    "Dark colors look good when used independently without gradients. DO NOT use dark colors as gradients.",
+    "Don't make generic centered layouts, simplistic gradients, and uniform styling.",
+    "Create depth through layered design elements with z-index hierarchy.",
+    "Use glass-morphism effects with backdrop filters (12-24px blur). DO NOT USE FULLY TRANSPARENT BACKGROUNDS for headers, dropdowns, overlays.",
+    "You MUST NOT apply universal transition (e.g., transition: all). Always add transitions for specific interactive elements like button, input excluding transforms.",
+    "You MUST NOT center align the app container, i.e., do not add `.App { text-align: center; }` in the css file. Left-align for better readability.",
+    "Always use modern button styles like pill-shaped, or sharp button with interaction animations & color relevant to the app style.",
+    "NEVER: use AI assistant Emoji characters like 🤖🧠💭💡🔮🎯 etc for icons.",
+    "Every interaction needs micro-animations - hover states, transitions, parallax effects, and entrance animations.",
+    "Use 2-3x more spacing than feels comfortable. Cramped designs look cheap.",
+    "Use sonner for toast notifications (located in /app/src/components/ui/sonner.js/tsx).",
+    "Missing categories (especially sponsor logos) = main agent will use placeholder text which is FORBIDDEN. Use the curated image URLs provided.",
+    "Ensure the application strictly uses Javascript (.js) and not Typescript where possible based on system rules."
+  ],
+  "instructions_to_main_agent": [
+    "Read this JSON thoroughly. The app must have both marketing side and two dashboard sides (client, admin).",
+    "Configure Tailwind with the specified colors and fonts (Playfair Display for headings, Manrope for body).",
+    "Ensure routing clearly separates Public routes (/, /tours, /countries) from App routes (/cabinet, /admin).",
+    "Implement internationalization (i18n) setup for UZ/EN/RU early in the structure.",
+    "Use standard Shadcn components for complex interactions (Tables, Dropdowns, DatePickers) but style them strictly to this luxury guideline (no standard Vercel styles).",
+    "All interactive elements MUST include a data-testid attribute.",
+    "Implement the ThemeProvider to support dark/light mode switching out of the box."
+  ]
+}
