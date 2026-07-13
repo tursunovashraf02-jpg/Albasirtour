@@ -1,8 +1,8 @@
-# Albasirtour — backend API on Render
-# Frontend: deploy frontend/ folder separately on Vercel
-# Database: MongoDB Atlas (free tier) — set MONGO_URL in Render dashboard
+# Albasirtour — Fullstack (Backend + Frontend) on Render
+# Database: MongoDB Atlas — set MONGO_URL in Render dashboard
 
 services:
+  # 1. API (Backend) Servisi
   - type: web
     name: albasirtour-api
     runtime: python
@@ -28,9 +28,12 @@ services:
         sync: false
       - key: ADMIN_EMAIL
         value: admin@albasirtour.com
-      - key: DEMO_USER_PHONE
-        value: "+998900000002"
-      - key: DEMO_USER_EMAIL
-        value: user@albasirtour.com
-      - key: DEMO_USER_PASSWORD
-        sync: false
+
+  # 2. Sayt (Frontend) Servisi
+  - type: web
+    name: albasirtour-frontend
+    runtime: static
+    rootDir: frontend
+    plan: free
+    buildCommand: "" # Agar frontend oddiy HTML/CSS/JS bo'lsa shunday qoladi. Agar React/Vite bo'lsa "npm install && npm run build" yozing
+    publishPath: "." # Agar React bo'lsa "dist" yoki "build" deb o'zgartiring
