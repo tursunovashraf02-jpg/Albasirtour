@@ -30,7 +30,7 @@ services:
         value: admin@albasirtour.com
 
   # 2. Sayt (Frontend) Servisi (TO'G'RILANDI)
-  - type: static
+  - type: static_site
     name: albasirtour-frontend
     rootDir: frontend
     plan: free
