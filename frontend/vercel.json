@@ -4,7 +4,8 @@
   "installCommand": "npm install",
   "framework": "create-react-app",
   "env": {
-    "CI": "false"
+    "CI": "false",
+    "REACT_APP_BACKEND_URL": "https://albasirtour-api.onrender.com"
   },
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }

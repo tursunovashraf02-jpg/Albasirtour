@@ -35,5 +35,12 @@ services:
     runtime: static
     rootDir: frontend
     plan: free
-    buildCommand: "" 
-    publishDir: "."
+    buildCommand: "npm install && npm run build"
+    publishDir: "build"
+    envVars:
+      - key: REACT_APP_BACKEND_URL
+        value: "https://albasirtour-api.onrender.com"
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
