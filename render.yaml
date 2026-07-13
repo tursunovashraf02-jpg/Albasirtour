@@ -29,10 +29,11 @@ services:
       - key: ADMIN_EMAIL
         value: admin@albasirtour.com
 
-  # 2. Sayt (Frontend) Servisi — TO'G'RI FORMAT
-  - type: static_site
+  # 2. Sayt (Frontend) Servisi — YAKUNIY TO'G'RI VARIANT
+  - type: web
     name: albasirtour-frontend
+    runtime: static
     rootDir: frontend
     plan: free
-    buildCommand: ""
+    buildCommand: "" 
     publishDir: "."
