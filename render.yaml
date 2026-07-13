@@ -29,10 +29,11 @@ services:
       - key: ADMIN_EMAIL
         value: admin@albasirtour.com
 
-  # 2. Sayt (Frontend) Servisi (TO'G'RILANDI)
-  - type: static_site
+  # 2. Sayt (Frontend) Servisi (TO'LIQ TO'G'RILANDI)
+  - type: web
     name: albasirtour-frontend
+    runtime: static
     rootDir: frontend
     plan: free
-    buildCommand: "" # Agar React/Vite bo'lsa "npm install && npm run build" yozing
-    publishDir: "." # Agar React bo'lsa "dist" deb o'zgartiring
+    buildCommand: "" 
+    publishDir: "."
