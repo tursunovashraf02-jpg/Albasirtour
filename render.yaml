@@ -29,11 +29,10 @@ services:
       - key: ADMIN_EMAIL
         value: admin@albasirtour.com
 
-  # 2. Sayt (Frontend) Servisi
-  - type: web
+  # 2. Sayt (Frontend) Servisi (TO'G'RILANDI)
+  - type: static
     name: albasirtour-frontend
-    runtime: static
     rootDir: frontend
     plan: free
-    buildCommand: "" # Agar frontend oddiy HTML/CSS/JS bo'lsa shunday qoladi. Agar React/Vite bo'lsa "npm install && npm run build" yozing
-    publishPath: "." # Agar React bo'lsa "dist" yoki "build" deb o'zgartiring
+    buildCommand: "" # Agar React/Vite bo'lsa "npm install && npm run build" yozing
+    publishDir: "." # Agar React bo'lsa "dist" deb o'zgartiring
